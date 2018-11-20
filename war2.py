@@ -46,20 +46,7 @@ def printCards(card1, card2):
 		elif (card2 == 14):
 			card2 = "A"
 	print("Player 1: " + str(card1) + " Player 2: " + str(card2))
-	
-
-def battle(card1, card2):
-	printCards(card1,card2)
-	if (card1 > card2):
-		print("Player1 wins!")
-		return 1
-	elif (card1 < card2) :
-		print("Player2 wins!")
-		return 2
-	elif (card1 == card2):
-		print("WAR!")
-		return 0
-		
+			
 def play_game(deck):
 	aDeck = deck[:int(len(deck)/2)]
 	bDeck = deck[int(len(deck)/2):]
