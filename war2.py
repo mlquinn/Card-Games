@@ -17,8 +17,11 @@ import clearConsole
 def createDeck():
 	suites = ["spade","heart","club","diamond"]
 	faces = [2,3,4,5,6,7,8,9,10,11,12,13,14]
+<<<<<<< HEAD
 	#suites = ["floops","blurgs"]
 	#faces = [1,2]
+=======
+>>>>>>> 4aac2cbee456f8ed60e4b8269bca793b20977386
 	deck = []
 	for suit in suites:
 		for face in faces:
