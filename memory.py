@@ -30,7 +30,7 @@ def displayCards(deck):
 		if x % 13 == 0:
 			print()
 
-def play_Memory(deck):
+def play_Memory(deck, mode):
 	matchedPairs = 0
 	while True:
 		displayCards(deck)
@@ -38,6 +38,8 @@ def play_Memory(deck):
 		try:
 			card1 = int(input("Please enter first card position: ").strip())
 			card2 = int(input("Please enter second card position: ").strip())
+			if mode == 'h' or mode == 'hard':
+				clearConsole.clear()
 			print("Card at position {} is {}.\nCard at position {} is {}.".format(str(card1),str(deck[card1 -1]),str(card2),str(deck[card2-1])))
 			if ((card1 and card2 < 53 ) and (card1 and card2 > 0)):
 				if deck[int(card1) - 1] == deck[int(card2) - 1]:
@@ -60,8 +62,11 @@ if __name__ == "__main__":
 		while play =="":
 			play = input("Ready to play Memory? ").strip().lower()
 		if play == "y":
+			mode = ""
+			while mode == "":
+				mode = input("Select dificulty: {E}asy or {H}ard? ").strip().lower()
 			deck = generateDeck()
-			play_Memory(deck)
+			play_Memory(deck, mode)
 		elif play == "n":
 			print("Goodbye.")
 			break;
