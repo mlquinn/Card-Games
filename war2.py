@@ -17,11 +17,6 @@ import clearConsole
 def createDeck():
 	suites = ["spade","heart","club","diamond"]
 	faces = [2,3,4,5,6,7,8,9,10,11,12,13,14]
-<<<<<<< HEAD
-	#suites = ["floops","blurgs"]
-	#faces = [1,2]
-=======
->>>>>>> 4aac2cbee456f8ed60e4b8269bca793b20977386
 	deck = []
 	for suit in suites:
 		for face in faces:
@@ -48,7 +43,7 @@ def printCards(card1, card2):
 			card2 = "K"
 		elif (card2 == 14):
 			card2 = "A"
-	print("Player 1: " + str(card1) + " Player 2: " + str(card2))
+	print("Player 1: " + str(card1) + "\nPlayer 2: " + str(card2))
 			
 def play_game(deck):
 	aDeck = deck[:int(len(deck)/2)]
@@ -85,7 +80,7 @@ def play_game(deck):
 		print("End round {}, deck 1 has {} cards and deck 2 has {} cards".format(round,len(aDeck),len(bDeck)))
 		round += 1
 		if round == 10000:
-			print("Game ended, out of time!")
+			print("Game ended, out of time! You are very unlucky.")
 		if (input(">Enter to draw again, Q to quit.\n").strip().lower() == 'q'):
 			print("You surrendered!")
 			break

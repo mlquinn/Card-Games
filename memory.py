@@ -10,6 +10,7 @@
 import random
 import clearConsole
 import array
+import time
 
 def generateDeck():
 	deck = []
@@ -30,8 +31,24 @@ def displayCards(deck):
 		if x % 13 == 0:
 			print()
 
+def winGraphic():
+	i=0
+	for i in range(0,3): 
+		clearConsole.clear()
+		time.sleep(0.5)
+		print("""
+		@     @   @@    @      @    @         @         @  @  @@     @  @@@@@@@  @@@@@@@  @@@@@@@
+		 @   @   @  @   @      @     @       @ @       @      @ @    @   @   @    @   @    @   @
+		  @ @   @    @  @      @      @     @   @     @    @  @  @   @    @ @      @ @      @ @
+		   @    @    @   @    @        @   @     @   @     @  @   @  @     @        @        @
+		   @     @  @     @  @          @ @       @ @      @  @    @ @  
+		   @      @@       @@            @         @       @  @     @@     @        @        @""")
+		time.sleep(0.5)
+	print("Nice job!")
+
 def play_Memory(deck, mode):
 	matchedPairs = 0
+	clearConsole.clear()
 	while True:
 		displayCards(deck)
 		print("Current score: {:d}".format(matchedPairs))
@@ -47,8 +64,8 @@ def play_Memory(deck, mode):
 					deck[card2-1] = "X "
 					matchedPairs += 1
 					print("Card match!")
-					if matchedPairs >= 26:
-						print("Congratulations! You win!")
+					if matchedPairs >= 1:
+						winGraphic()
 						break;
 				else:
 					print("No match.")
@@ -60,7 +77,7 @@ if __name__ == "__main__":
 	while True:
 		play = ""
 		while play =="":
-			play = input("Ready to play Memory? ").strip().lower()
+			play = input("Ready to play Memory?(y/n) ").strip().lower()
 		if play == "y":
 			mode = ""
 			while mode == "":
