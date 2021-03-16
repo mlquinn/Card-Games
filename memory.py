@@ -64,7 +64,7 @@ def play_Memory(deck, mode):
 					deck[card2-1] = "X "
 					matchedPairs += 1
 					print("Card match!")
-					if matchedPairs >= 1:
+					if matchedPairs >= 26:
 						winGraphic()
 						break;
 				else:
